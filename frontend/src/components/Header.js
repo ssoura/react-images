@@ -16,14 +16,16 @@ const Header = (props) => {
         <Nav.Link href="#action1">Home</Nav.Link>
         <Nav.Link href="#action2">Link</Nav.Link>
       </Nav>
-      <Form className="d-flex">
+      <Form className="d-flex" onSubmit={props.handleSubmit}>
         <FormControl
-          type="search"
-          placeholder="Search"
+          type="text"
+          value={props.word}
+          onChange={(e) => props.setWord(e.target.value)}
+          placeholder="Search Image"
           className="me-2"
           aria-label="Search"
         />
-        <Button variant="outline-success">Search</Button>
+        <Button variant="outline-success" type="submit">Search</Button>
       </Form>
     </Navbar.Collapse>
   </Container>
